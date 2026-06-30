@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>林晨祈 | UI/UX & Web Designer Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #64748b;
+        --accent-color: #0ea5e9;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #475569;
+        --border-radius: 12px;
+        --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", "Noto Sans TC", sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      /* --- Header Section --- */
+      header {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: white;
+        padding: 60px 40px;
+        border-radius: var(--border-radius);
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        box-shadow: var(--shadow);
+        margin-bottom: 40px;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        object-fit: cover;
+      }
+
+      .header-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+      .header-content .title {
+        font-size: 1.2rem;
+        color: var(--accent-color);
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+      .tags {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .tag {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+      }
+
+      /* --- Layout --- */
+      .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 30px;
+      }
+
+      /* --- Sidebar --- */
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .card {
+        background: var(--card-bg);
+        padding: 25px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+      }
+      .card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        border-left: 4px solid var(--primary-color);
+        padding-left: 12px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+      }
+      .contact-item i {
+        color: var(--primary-color);
+        width: 16px;
+      }
+
+      .skill-group {
+        margin-bottom: 20px;
+      }
+      .skill-group h4 {
+        font-size: 0.9rem;
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+      }
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .skill-badge {
+        background: #eff6ff;
+        color: #1d4ed8;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      /* --- Main Content --- */
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .experience-item {
+        position: relative;
+        padding-left: 25px;
+        border-left: 2px solid #e2e8f0;
+        margin-bottom: 30px;
+      }
+      .experience-item::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--primary-color);
+      }
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+      .exp-company {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+      .exp-date {
+        font-size: 0.85rem;
+        color: var(--secondary-color);
+        background: #f1f5f9;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .exp-role {
+        color: var(--primary-color);
+        font-weight: 500;
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+      }
+      .exp-desc {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+      .exp-desc ul {
+        margin-left: 18px;
+        margin-top: 8px;
+      }
+      .exp-desc li {
+        margin-bottom: 5px;
+      }
+
+      .cert-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      .cert-item {
+        background: #f8fafc;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .cert-item i {
+        color: #f59e0b;
+      }
+
+      /* --- Responsive --- */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+          padding: 40px 20px;
+        }
+        .main-grid {
+          grid-template-columns: 1fr;
+        }
+        .exp-header {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <img src="./image/S__51511298.png" alt="林晨祈" class="profile-img" />
+        <!-- 替換成你的頭像連結 -->
+        <div class="header-content">
+          <h1>林晨祈</h1>
+          <div class="title">UI/UX 設計師 | 網頁設計 | 平面視覺</div>
+          <p
+            style="
+              margin-bottom: 20px;
+              opacity: 0.9;
+              font-size: 0.95rem;
+              max-width: 600px;
+            "
+          >
+            具備 5-6 年平面視覺設計經驗，目前深耕 UI/UX 與前端技術轉型。<br />擅長跨團隊協作，以使用者為核心，打造兼具美感與實用性的數位產品解決方案。
+          </p>
+          <div class="tags">
+            <button class="tag">
+              <a
+                href="https://www.figma.com/proto/WBpDRIOcYoDz84mgiIpE7z/%E7%B8%BD%E5%90%88?node-id=43-2443&p=f&t=RM2UNRKauv3dC9OF-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=43%3A2443"
+                style="color: white; text-decoration: none"
+                target="_blank"
+                >UI/UX作品集 ➚</a
+              >
+            </button>
+            <button class="tag" style="color: white">
+              <a
+                href="https://aachiee.github.io/2026PORTFOLIO/"
+                style="color: white; text-decoration: none"
+                target="_blank"
+                >平面設計作品集 ➚
+              </a>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="main-grid">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <!-- Contact -->
+          <div class="card">
+            <h3>聯絡資訊</h3>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i> 0977-406-662
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i> lincheng1105@gmail.com
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i> 新北市林口區
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-language"></i> 英文 (聽/說/讀/寫 中等)
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="card">
+            <h3>專業技能</h3>
+            <div class="skill-group">
+              <h4>UI / UX Design</h4>
+              <div class="skill-tags">
+                <span class="skill-badge">Figma</span>
+                <span class="skill-badge">FigJam</span>
+                <span class="skill-badge">Wireframe</span>
+                <span class="skill-badge">User Flow</span>
+                <span class="skill-badge">Prototype</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h4>Frontend</h4>
+              <div class="skill-tags">
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS3</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h4>Visual Design</h4>
+              <div class="skill-tags">
+                <span class="skill-badge">Photoshop</span>
+                <span class="skill-badge">Illustrator</span>
+                <span class="skill-badge">CIS 企劃</span>
+                <span class="skill-badge">品牌識別</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="card">
+            <h3>教育背景</h3>
+            <div style="font-size: 0.95rem; font-weight: 700">國立聯合大學</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted)">
+              原住民學士學位學程專班
+            </div>
+            <div
+              style="
+                font-size: 0.8rem;
+                color: var(--secondary-color);
+                margin-top: 5px;
+              "
+            >
+              2016/09 - 2020/06
+            </div>
+          </div>
+          <!-- Certifications -->
+          <div class="card">
+            <h3 class="section-title">
+              <i class="fa-solid fa-certificate"></i> 資格認證
+            </h3>
+            <div class="cert-grid">
+              <div class="cert-item">
+                <i class="fa-solid fa-award"></i> Google Analytics (GAIQ)
+              </div>
+              <div class="cert-item">
+                <i class="fa-solid fa-award"></i> AI 技術輔助廣告認證
+              </div>
+              <div class="cert-item">
+                <i class="fa-solid fa-award"></i> Adobe Photoshop
+              </div>
+              <div class="cert-item">
+                <i class="fa-solid fa-award"></i> Adobe Illustrator
+              </div>
+              <div class="cert-item">
+                <i class="fa-solid fa-award"></i> Professional Visual Design
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+          <!-- Experience -->
+          <div class="card">
+            <h3 class="section-title">
+              <i class="fa-solid fa-briefcase"></i> 工作經驗
+            </h3>
+
+            <div class="experience-item">
+              <div class="exp-header">
+                <div class="exp-company">春暉映像有限公司</div>
+                <span class="exp-date">2025/05 - 2026/04</span>
+              </div>
+              <div class="exp-role">平面設計 / 行銷企劃</div>
+              <div class="exp-desc">
+                <b style="color: #00afb8">＊ 在職負責專案</b>
+                <ol>
+                  <li><b>電影設計專案《突破：三千米的泳氣》</b></li>
+                  <ul>
+                    <li>
+                      視覺與廣告設計：海報設計、實體票券、實體廣告版面素材、活動現場背板製作，以及各售票平台的數位廣告素材。
+                    </li>
+                    <li>
+                      產品與周邊開發：行銷周邊商品與宣傳小物，並負責與異業合作商洽談之合作產品設計。
+                    </li>
+                    <li>
+                      數位行銷與營運：規劃社群平台的內容經營與互動維護，並製作相關行銷素材，有效提升受眾黏著度與專案曝光。
+                    </li>
+                  </ul>
+                  <li><b>電影設計專案《八歲》</b></li>
+                  <ul>
+                    <li>
+                      視覺與廣告設計：
+                      負責專案海報、實體票券，以及各售票平台的廣告素材。
+                    </li>
+                    <li>
+                      產品與周邊開發：製作行銷周邊商品與宣傳小物與後續發包製作。
+                    </li>
+                  </ul>
+                  <li><b>電影專案協作《腎上腺母侵》</b></li>
+                  <ul>
+                    <li>
+                      視覺與廣告設計：
+                      協助設計專案執行進度，確保各項廣告素材如期交付與上線，推進專案達成各階段目標。
+                    </li>
+                  </ul>
+                </ol>
+                <br />
+                <b style="color: #00afb8">＊ 協助工作項目</b>
+                <ol>
+                  <li>
+                    活動場控與佈置：擔任首映會、粉絲簽名會及業界包場等線下活動工作人員，負責現場場地佈置與動線引導。
+                  </li>
+                  <li>
+                    商品控管與公關協助：負責活動現場周邊商品之進銷存與發放控管，並機動性協助演員與來賓之現場工作需求。
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="exp-header">
+                <div class="exp-company">喜鴻旅行社股份有限公司</div>
+                <span class="exp-date">2023/08 - 2025/04</span>
+              </div>
+              <div class="exp-role">平面設計師</div>
+              <div class="exp-desc">
+                <b style="color: #00afb8">＊ 在職負責項目</b>
+                <ol>
+                  <li>
+                    行銷視覺與廣告設計：負責產製各類旅遊產品之平面設計、廣告宣傳單與各式行銷海報素材，精準傳遞商業資訊與活動亮點。
+                  </li>
+                  <li>
+                    社群平台素材製作：針對不同社群平台之特性與受眾，設計高質感的數位視覺素材，提升線上曝光度與互動率。
+                  </li>
+                </ol>
+                <br />
+                <b style="color: #00afb8">＊ 協助工作項目</b>
+                <ol>
+                  <li>
+                    <b>網頁設計與視覺優化</b
+                    >：協助旅遊產品網頁之視覺排版與介面更新，確保線上閱覽體驗順暢且符合品牌視覺規範。
+                  </li>
+                  <li>
+                    行銷企劃協作：參與行銷企劃之發想與前期討論，視覺設計與題材建議，輔助企劃案順利執行。
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Self Intro -->
+          <div class="card">
+            <h3 class="section-title">
+              <i class="fa-solid fa-user-pen"></i> 自傳
+            </h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted)">
+              【關於我】
+              <br />具備專業的平面設計實務背景。職涯從視覺設計起步，在實務中逐漸深耕
+              UI/UX
+              介面設計與前端網頁技術，目前正積極轉型至介面設計與使用者體驗。期許能發揮跨領域的專長，幫助團隊打造兼具美感與實用性的數位產品。
+              <br />工作中盡責、細心、跨部門溝通，在影視與旅遊產業的經歷中，培養了專案統籌能力，擅長釐清各方需求，並透過清晰的邏輯與組織能力，與行銷、開發不同部門順暢協作，提供最符合業務需求的解決方案。為了提升自己在前端與數位產品領域的專業技能，不斷透過實作與進修累積經驗。除了自主參與網頁開發課程，也積極參與政府培訓課程。提升介面規劃到前端切版的跨領域理解力，能有效降低協作的溝通成本。
+              <br />
+              <br />【工作經歷與學習】 <br />2025電影設計專案《八歲》
+              <br />2025電影設計專案《突破：三千米的泳氣》
+              <br />2026電影專案協作《腎上腺母侵》
+              <br />2026網站合作專案《好囍辣 Hoshila》
+              <br />2026自主開發專案《電影時刻表 APP》
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
