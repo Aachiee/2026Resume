@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
@@ -18,8 +18,8 @@
         --text-main: #1e293b;
         --text-muted: #475569;
         --border-radius: 12px;
-        --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow:
+          0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
       }
 
       * {
@@ -143,6 +143,12 @@
         border-radius: 6px;
         font-size: 0.8rem;
         font-weight: 500;
+      }
+      .cert-image {
+        width: 100%; /* 強制圖片寬度填滿容器 */
+        height: auto; /* 高度自動調整以維持比例 */
+        display: block; /* 避免圖片下方出現多餘空隙 */
+        border-radius: 4px; /* 選用：若想讓圖片邊角圓潤，可加入此行 */
       }
 
       /* --- Main Content --- */
@@ -286,11 +292,11 @@
       </header>
 
       <div class="main-grid">
-        <!-- Sidebar -->
+        <!-- 側邊攔 -->
         <aside class="sidebar">
-          <!-- Contact -->
+          <!-- 聯絡資訊 -->
           <div class="card">
-            <h3>聯絡資訊</h3>
+            <h3><i class="fa-solid fa-address-book"></i> 聯絡資訊</h3>
             <div class="contact-item">
               <i class="fa-solid fa-phone"></i> 0977-406-662
             </div>
@@ -300,14 +306,11 @@
             <div class="contact-item">
               <i class="fa-solid fa-location-dot"></i> 新北市林口區
             </div>
-            <div class="contact-item">
-              <i class="fa-solid fa-language"></i> 英文 (聽/說/讀/寫 中等)
-            </div>
           </div>
 
-          <!-- Skills -->
+          <!-- 專業技能 -->
           <div class="card">
-            <h3>專業技能</h3>
+            <h3><i class="fa-solid fa-screwdriver-wrench"></i> 專業技能</h3>
             <div class="skill-group">
               <h4>UI / UX Design</h4>
               <div class="skill-tags">
@@ -333,12 +336,15 @@
                 <span class="skill-badge">CIS 企劃</span>
                 <span class="skill-badge">品牌識別</span>
               </div>
+              <div class="skill-group">
+                <h4>英文 (聽/說/讀/寫 中等)</h4>
+              </div>
             </div>
           </div>
 
-          <!-- Education -->
+          <!-- 教育背景 -->
           <div class="card">
-            <h3>教育背景</h3>
+            <h3><i class="fa-solid fa-graduation-cap"></i> 教育背景</h3>
             <div style="font-size: 0.95rem; font-weight: 700">國立聯合大學</div>
             <div style="font-size: 0.85rem; color: var(--text-muted)">
               原住民學士學位學程專班
@@ -353,39 +359,99 @@
               2016/09 - 2020/06
             </div>
           </div>
-          <!-- Certifications -->
+          <!-- 證照 -->
           <div class="card">
             <h3 class="section-title">
-              <i class="fa-solid fa-certificate"></i> 資格認證
+              <i class="fa-solid fa-medal"></i> 資格認證
             </h3>
             <div class="cert-grid">
               <div class="cert-item">
-                <i class="fa-solid fa-award"></i> Google Analytics (GAIQ)
-              </div>
-              <div class="cert-item">
-                <i class="fa-solid fa-award"></i> AI 技術輔助廣告認證
-              </div>
-              <div class="cert-item">
                 <i class="fa-solid fa-award"></i> Adobe Photoshop
               </div>
+              <img
+                src="./image/Adobe Photoshop.webp"
+                alt="Adobe Photoshop"
+                class="cert-image"
+              />
               <div class="cert-item">
                 <i class="fa-solid fa-award"></i> Adobe Illustrator
               </div>
+              <img
+                src="./image/Adobe Illustrator.webp"
+                alt="Adobe Illustrator"
+                class="cert-image"
+              />
               <div class="cert-item">
                 <i class="fa-solid fa-award"></i> Professional Visual Design
               </div>
+              <img
+                src="./image/Adobe Professional Visual Design.webp"
+                alt="Professional Visual Design"
+                class="cert-image"
+              />
+              <div class="cert-item">
+                <i class="fa-solid fa-award"></i> Google Analytics (GAIQ)
+              </div>
+              <img
+                src="./image/Google Analytics (GAIQ).webp"
+                alt="Google Analytics (GAIQ)"
+                class="cert-image"
+              />
+              <div class="cert-item">
+                <i class="fa-solid fa-award"></i> AI 技術輔助廣告認證
+              </div>
+              <img
+                src="./image/AI 技術輔助廣告認證.webp"
+                alt="AI 技術輔助廣告認證"
+                class="cert-image"
+              />
             </div>
           </div>
         </aside>
 
         <!-- Main Content -->
         <main class="content">
-          <!-- Experience -->
+          <!-- 自我介紹 -->
+          <div class="card">
+            <h3 class="section-title">
+              <i class="fa-solid fa-user-pen"></i> 自我介紹
+            </h3>
+            <div class="experience-item">
+              <div class="exp-desc">
+                <p style="font-size: 0.95rem; color: var(--text-muted)">
+                  我的父母分別從事機械工程與攝影的精密組裝，他們認真負責與踏實的工作態度，深深影響了我，培養出我面對挑戰時堅韌且盡責的價值觀。
+                  <br />
+                  <br />職涯從視覺設計起步，有平面設計實務背景，從中逐漸深耕UI/UX介面設計與前端網頁技術，目前正積極轉型至介面設計與使用者體驗。期許能發揮跨領域的專長，幫助團隊打造具美感與實用性的數位產品。
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 求學歷程 -->
+          <div class="card">
+            <h3 class="section-title">
+              <i class="fa-solid fa-book"></i> 求學歷程
+            </h3>
+            <div class="experience-item">
+              <div class="exp-desc">
+                <p style="font-size: 0.95rem; color: var(--text-muted)">
+                  我畢業於國立聯合大學原住民學士學位學程專班，在學期間奠定了扎實的設計基礎與多元視角。為追求專業突破與轉型，我持續投入跨領域進修。我曾完成國立臺北商業大學的「互動式前端網頁設計與開發實務班」，以及聯成電腦的「CIS設計與多媒體影音班」，強化前端與視覺基礎。目前，我正在健行科技大學參與「多元互動設計UI/UX人才養成班」，全方位精進介面規劃與實作能力。
+                  <ul>
+                    <li>2020國立聯合大學-原住民學士學位學程專班</li>
+                    <li>2022國立台北商業大學-互動式前端網頁設計與開發實務班</li>
+                    <li>2023聯成電腦-CIS設計與多媒體影音班</li>
+                    <li>2026健行科技大學-多元互動設計UI/UX人才養成班</li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 工作經驗 -->
           <div class="card">
             <h3 class="section-title">
               <i class="fa-solid fa-briefcase"></i> 工作經驗
             </h3>
 
+            <!-- 春暉映像有限公司 -->
             <div class="experience-item">
               <div class="exp-header">
                 <div class="exp-company">春暉映像有限公司</div>
@@ -438,12 +504,13 @@
               </div>
             </div>
 
+            <!-- 喜鴻旅行社股份有限公司 -->
             <div class="experience-item">
               <div class="exp-header">
                 <div class="exp-company">喜鴻旅行社股份有限公司</div>
                 <span class="exp-date">2023/08 - 2025/04</span>
               </div>
-              <div class="exp-role">平面設計師</div>
+              <div class="exp-role">平面設計 / 網頁設計</div>
               <div class="exp-desc">
                 <b style="color: #00afb8">＊ 在職負責項目</b>
                 <ol>
@@ -467,26 +534,61 @@
                 </ol>
               </div>
             </div>
-          </div>
 
-          <!-- Self Intro -->
+            <!-- 其他專案 -->
+            <div class="experience-item">
+              <div class="exp-header">
+                <div class="exp-company">其他專案</div>
+              </div>
+              <div class="exp-role">UIUX設計 / 網頁設計</div>
+              <div class="exp-desc">
+                <ol>
+                  <li>
+                    網站合作專案《好囍辣 Hoshila》
+                    <ul>
+                      <li>UI介面實作：運用 Figma 獨立完成網站的 UI 介面設計與行銷 Banner 視覺繪製，兼顧商業需求與流暢的使用者體驗。
+                      </li>
+                      <li>UX客群分析：參與團隊協作進行目標客群分析，精準釐清使用者輪廓。</li>
+                      <li>前端思維與跨域協作：運用框架概念與工程團隊緊密對接，確保網頁視覺的高還原度。</li>
+                    </ul>
+                  </li>
+                  <li>
+                    自主開發專案《電影時刻表 APP》
+                    <ul>
+                      <li>UX分析與流程規劃：結合過往影視產業實務經驗，進行使用者分析，洞察觀影受眾需求與痛點，梳理出直覺、順暢的查詢與操作動線。</li>
+                      <li>UI 介面設計與實作：運用 Figma 獨立完成介面設計，建立一致性的 UI 元件與視覺規範，製作高保真互動式原型Prototype。</li>
+                      <li>品牌視覺與 Logo 設計：從零打造專案的品牌識別系統，獨立完成專屬 Logo 設計與整體風格定調。</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- 其他介紹 -->
           <div class="card">
             <h3 class="section-title">
-              <i class="fa-solid fa-user-pen"></i> 自傳
+              <i class="fa-solid fa-user"></i> 其他介紹
             </h3>
-            <p style="font-size: 0.95rem; color: var(--text-muted)">
-              【關於我】
-              <br />具備專業的平面設計實務背景。職涯從視覺設計起步，在實務中逐漸深耕
-              UI/UX
-              介面設計與前端網頁技術，目前正積極轉型至介面設計與使用者體驗。期許能發揮跨領域的專長，幫助團隊打造兼具美感與實用性的數位產品。
-              <br />工作中盡責、細心、跨部門溝通，在影視與旅遊產業的經歷中，培養了專案統籌能力，擅長釐清各方需求，並透過清晰的邏輯與組織能力，與行銷、開發不同部門順暢協作，提供最符合業務需求的解決方案。為了提升自己在前端與數位產品領域的專業技能，不斷透過實作與進修累積經驗。除了自主參與網頁開發課程，也積極參與政府培訓課程。提升介面規劃到前端切版的跨領域理解力，能有效降低協作的溝通成本。
-              <br />
-              <br />【工作經歷與學習】 <br />2025電影設計專案《八歲》
-              <br />2025電影設計專案《突破：三千米的泳氣》
-              <br />2026電影專案協作《腎上腺母侵》
-              <br />2026網站合作專案《好囍辣 Hoshila》
-              <br />2026自主開發專案《電影時刻表 APP》
-            </p>
+
+            <!-- 人格特質 -->
+            <div class="experience-item">
+              <div class="exp-header">
+                <div class="exp-company">人格特質</div>
+              </div>
+              <div class="exp-desc">
+                <p>我具備高度的自我學習力。面對未知挑戰時，總能保持敏捷的思維並主動尋求解決方案。在影視與旅遊產業的高壓環境中，培養了細心謹慎的工作態度與優異的跨部門溝通技巧。我擅長傾聽並釐清各方需求，透過清晰的邏輯與組織能力，將繁雜的資訊轉化為易讀且具美感的設計。我深知成功的專案需要不同專業的契合，因此樂於擔任行銷與開發部門間的橋樑，具備跨域整合的思維，致力於提供最符合業務與使用者需求的解決方案。</p>
+              </div>
+            </div>
+
+            <!-- 未來展望 -->
+            <div class="experience-item">
+              <div class="exp-header">
+                <div class="exp-company">未來展望</div>
+              </div>
+              <div class="exp-desc">
+                <p>展望未來，我期許能正式轉型為專業的 UI/UX 設計師與網頁設計師。我將持續精進前端技術與資訊架構規劃，發揮跨領域專長，協助團隊打造兼具美感與實用性的數位產品。</p>
+              </div>
+            </div>
           </div>
         </main>
       </div>
